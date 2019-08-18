@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <link rel="stylesheet" href="style.css">
+    <title>Showtime Komputeishon | Jokes</title>
+</head>
+<body>
+<main id="content" class="main-content" role="main">
+<h1>Showtime Komputeishon</h1>
+<h2>About</h2>
+<p>On some local forum there was a series of discussions about pure-graphical
+program representations. It was going on and on. It was about how great it would
+be, and how text representations are bad because the (anonymous) person that
+started the discussions had a bad time learning any conventional text-based
+languages.</p>
+<p>Somewhere in the middle, when I tried to poke around, I wrote about somewhat
+extreme version. Imagine multiple blocks connected by wires. There is a hidden
+clock that drives blocks, makes them to perform calculations, or to just
+propagate values through. Similar to digital logic components.</p>
+<p>At the time the idea was just stupid. But when I read it again about a week
+later, it changed from just stupid to stupid and fun.</p>
+
+<h2>The thing</h2>
+<p>Some code, and there you have it. Jumping blocks. Why not?</p>
+<iframe src="https://player.vimeo.com/video/349289949" width="640" height="359"
+        frameborder="0" allow="autoplay; fullscreen" allowfullscreen>
+</iframe>
+<hr/>
+
+<p>Some more code, and the arithmetic addition works.</p>
+<iframe src="https://player.vimeo.com/video/349290110" width="640" height="346"
+        frameborder="0" allow="autoplay; fullscreen" allowfullscreen>
+</iframe>
+<hr/>
+
+<p>As you see from the timestamps, I wasn't very quick. It took some time.
+Meanwhile I was asked when a new video will come. And that's why the trailer was
+born.</p>
+<iframe src="https://player.vimeo.com/video/350376651" width="640"  height="273"
+        frameborder="0" allow="autoplay; fullscreen" allowfullscreen>
+</iframe>
+<hr/>
+
+<p>Around that time I decided that I was going to draw a circle with that thing.
+A circle rasterization it not a very complicated algorithm, but it's not
+trivial. There should be some decision logic, which can be tricky. Especially
+if one needs to match the clock.</p>
+<p>Visuals didn't change so much, but there were still quite a few additions.
+A graph node with point converters were introduced. Node freezing became
+a thing. So it became possible to freeze counters, reset their values, and then
+to start again, without disconnecting wires.</p>
+<iframe src="https://player.vimeo.com/video/351509224" width="640" height="347"
+        frameborder="0" allow="autoplay; fullscreen" allowfullscreen>
+</iframe>
+<hr/>
+
+<p>And finally, a circle was rasterized. The scheme was smaller than I initially
+expected it to be, since I was thinking about avoiding multiplications if
+possible. But then there is no way to make a multiplication node to not multiply
+numbers each cycle. That's how they are: they do their calculation each
+time the clock ticks. And since there must be at least some of them anyway, why
+not to use them more?</p>
+<p>On the other hand, the interconnections are messy. They are even harder to
+track than I imagined in my head. I can't say it's impossible to figure out
+what the scheme does and how. But will anybody do that for real?</p>
+<iframe src="https://player.vimeo.com/video/351835220" width="640" height="360"
+        frameborder="0" allow="autoplay; fullscreen" allowfullscreen>
+</iframe>
+<hr/>
+<h3>Conclusion</h3>
+<p>I was thinking how hard would it be to code for such programming environment,
+and how hard it would be to read others code. Circle rasterization was the code
+I hoped I still can do, although with struggle. Suprisingly, it turned out that
+predictions were correct. It's almost painful to watch that, if you imagine for
+a second that you need to figure out how <i>that</i> works.
+</p>
+<p>Next time somebody tells me that graphical coding is easier, I'll have
+something to show them.</p>
+<p>And by the way, here is the final source code:
+<a href="https://github.com/i-rinat/jokes/tree/master/showtime-komputeishon">
+https://github.com/i-rinat/jokes/tree/master/showtime-komputeishon</a>.
+</p>
+</main>
+</body>
+</html>
