@@ -1,3 +1,7 @@
+# -*- coding: utf-8 -*-
+# Copyright 2019  Rinat Ibragimov
+# SPDX-License-Identifier: MIT
+
 from collections import namedtuple
 from datetime import datetime
 from pprint import pprint
